@@ -33,11 +33,11 @@ const offerPoints = [
 ];
 
 const testimonials = [
-  { name: "Rohan Sharma", role: "Founder, Spice Route Bistro — Mumbai, India", country: "🇮🇳", text: "TechySite delivered our restaurant website and reels in just 8 days. Online orders jumped 60% in the first month — the team genuinely understands Indian customers." },
-  { name: "Priya Verma", role: "Director, Verma Textiles — Delhi, India", country: "🇮🇳", text: "From e-commerce store to UPI checkout and our brand reels, everything was handled end-to-end. Our wholesale enquiries from Tier-2 cities have tripled." },
-  { name: "Aditya Khanna", role: "CEO, NoidaTech Solutions — Noida, India", country: "🇮🇳", text: "We needed a CRM and a corporate website fast. TechySite shipped both with Zoho integration. Sales follow-ups are now 3x faster." },
-  { name: "Sara Whitman", role: "Owner, Bloom & Co. — London, United Kingdom", country: "🇬🇧", text: "Working across time zones felt seamless. The website looks like a luxury brand five times our size and the reels brought 12k new followers in two months." },
-  { name: "Daniel Reyes", role: "CEO, Northwave Fitness — Toronto, Canada", country: "🇨🇦", text: "The launch package paid for itself in week one. Easily the best investment we've made — and support has been outstanding ever since." },
+  { name: "Rohan Sharma", role: "Founder, Spice Route Bistro — Mumbai, India", country: "🇮🇳", rating: 4.8, text: "TechySite delivered our restaurant website and reels in just 8 days. Online orders jumped 60% in the first month — the team genuinely understands Indian customers." },
+  { name: "Priya Verma", role: "Director, Verma Textiles — Delhi, India", country: "🇮🇳", rating: 4.5, text: "From e-commerce store to UPI checkout and our brand reels, everything was handled end-to-end. Our wholesale enquiries from Tier-2 cities have tripled." },
+  { name: "Aditya Khanna", role: "CEO, NoidaTech Solutions — Noida, India", country: "🇮🇳", rating: 4.0, text: "We needed a CRM and a corporate website fast. TechySite shipped both with Zoho integration. Sales follow-ups are now 3x faster." },
+  { name: "Sara Whitman", role: "Owner, Bloom & Co. — London, United Kingdom", country: "🇬🇧", rating: 3.6, text: "Working across time zones felt seamless. The website looks like a luxury brand five times our size and the reels brought 12k new followers in two months." },
+  { name: "Daniel Reyes", role: "CEO, Northwave Fitness — Toronto, Canada", country: "🇨🇦", rating: 4.2, text: "The launch package paid for itself in week one. Easily the best investment we've made — and support has been outstanding ever since." },
 ];
 
 const projects = [
@@ -215,10 +215,23 @@ function Home() {
               style={{ animationDelay: `${i * 80}ms` }}
             >
               <div className="flex items-center justify-between">
-                <div className="flex gap-0.5 text-accent-yellow">
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <Star key={j} className="h-4 w-4 fill-current" />
-                  ))}
+                <div className="flex items-center gap-2">
+                  <div className="relative inline-flex">
+                    <div className="flex gap-0.5 text-accent-yellow/35">
+                      {Array.from({ length: 5 }).map((_, j) => (
+                        <Star key={j} className="h-4 w-4 fill-current" />
+                      ))}
+                    </div>
+                    <div
+                      className="absolute inset-0 flex overflow-hidden text-accent-yellow"
+                      style={{ width: `${(Math.max(0, Math.min(5, t.rating)) / 5) * 100}%` }}
+                    >
+                      {Array.from({ length: 5 }).map((_, j) => (
+                        <Star key={j} className="h-4 w-4 shrink-0 fill-current" />
+                      ))}
+                    </div>
+                  </div>
+                  <span className="text-xs font-medium text-muted-foreground">{t.rating.toFixed(1)}/5</span>
                 </div>
                 <span className="text-xl" aria-hidden>{t.country}</span>
               </div>

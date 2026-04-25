@@ -25,10 +25,10 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="text-sm font-medium">Get in touch</h4>
+          <h4 className="text-sm font-medium">info@techysite.software</h4>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li><Link to="/contact" className="hover:text-foreground">Contact</Link></li>
-            <li>hr@techysite.is-local.org</li>
+            <li>info@techysite.software</li>
             <li>+91 86192 48937</li>
             <li>Vaishali Nagar, Jaipur</li>
           </ul>

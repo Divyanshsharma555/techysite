@@ -50,7 +50,7 @@ function Contact() {
         <div className="grid gap-10 md:grid-cols-5">
           <div className="md:col-span-2 space-y-6">
             {[
-              { icon: Mail, label: "HR Email", value: "hr@techysite.is-local.org", href: "mailto:hr@techysite.is-local.org" },
+              { icon: Mail, label: "HR Email", value: "hr@techysite.software", href: "mailto:hr@techysite.software" },
               { icon: Phone, label: "Phone", value: "+91 86192 48937", href: "tel:+918619248937" },
               { icon: MessageCircle, label: "WhatsApp", value: "Chat on +91 86192 48937", href: "https://wa.me/918619248937" },
               { icon: MapPin, label: "Studio", value: "Vaishali Nagar, near Amrapali Circle, Jaipur" },
